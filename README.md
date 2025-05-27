@@ -10,7 +10,7 @@ Un punto d'ingresso nel mondo della fibra FTTH, del web e del design.
 
 La landing page di NodoZero è progettata per essere leggera, veloce e d'impatto.
 Contiene elementi visivi animati, un logo ufficiale, una frase introduttiva con effetto digitazione e i contatti essenziali.
-È pensata come base per un ecosistema più ampio di strumenti digitali dedicati al mondo FTTH.
+È pensata come base per un ecosistema più ampio di strumenti digitali dedicati al mondo FTTH e non solo. 
 
 ---
 
