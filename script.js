@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const textElement = document.getElementById("main-text");
-  const fullText = "NodoZero. Il primo nodo. L'unico che conta.";
+
+  const fullText = "Il\u00A0primo\u00A0nodo. L'unico\u00A0che\u00A0conta.";
   const speed = 40;
 
   let index = 0;
-  let currentText = "";
 
   textElement.textContent = "";
 
   function typeWriter() {
     if (index < fullText.length) {
-      currentText += fullText[index];
-      textElement.textContent = currentText;
+      const currentChar = fullText[index];
+      textElement.textContent += currentChar;
       index++;
       setTimeout(typeWriter, speed);
     }
