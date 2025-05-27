@@ -59,6 +59,10 @@ h1#main-text {
   padding: 0 10px;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .motto {
   margin-top: 20px;
   font-size: 1.1rem;
