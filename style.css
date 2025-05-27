@@ -25,10 +25,13 @@ body {
   text-align: center;
   overflow: hidden;
   padding: 20px;
+  position: relative;
 }
 
 .container {
   animation: fadeIn 2s ease-in-out;
+  max-width: 95vw;
+  word-break: break-word;
 }
 
 .logo-wrapper {
@@ -44,12 +47,14 @@ body {
 
 h1#main-text {
   font-size: 2rem;
-  line-height: 1.6;
-  max-width: 90vw;
-  white-space: nowrap; /* mantiene il testo su una riga su schermi grandi */
+  line-height: 1.4;
+  max-width: 100%;
+  white-space: normal;
   animation: textAppear 3s ease forwards;
   opacity: 0;
-  overflow: hidden;
+  overflow-wrap: break-word;
+  overflow: visible;
+  padding: 0 10px;
 }
 
 .motto {
@@ -57,19 +62,27 @@ h1#main-text {
   font-size: 1.1rem;
   color: var(--accent-color);
   opacity: 0.8;
+  padding: 0 10px;
 }
 
+/* footer contatti */
 .contatti {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   font-size: 0.9rem;
   color: #888;
+  width: 100%;
+  text-align: center;
+  background: rgba(10, 10, 10, 0.8);
+  padding: 5px 0;
+  box-sizing: border-box;
+  z-index: 10;
 }
 
 .contatti a {
   color: var(--accent-color);
   text-decoration: none;
-  margin: 0 5px;
+  margin: 0 8px;
 }
 
 .contatti a:hover {
@@ -96,10 +109,31 @@ h1#main-text {
   }
 }
 
-/* Responsive: disabilita nowrap e riduci font su schermi piccoli */
-@media (max-width: 600px) {
+/* Gestione responsive per orientamento orizzontale */
+@media (orientation: landscape) and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
   h1#main-text {
+    font-size: 1.5rem;
     white-space: normal;
-    font-size: 1.6rem;
+  }
+
+  .motto {
+    font-size: 1rem;
+  }
+
+  .logo-wrapper {
+    margin-bottom: 15px;
+  }
+
+  #logo {
+    width: 140px;
+  }
+
+  .contatti {
+    font-size: 0.8rem;
+    padding: 3px 0;
   }
 }
