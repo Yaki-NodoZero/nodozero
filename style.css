@@ -46,7 +46,7 @@ h1#main-text {
   font-size: 2rem;
   line-height: 1.6;
   max-width: 90vw;
-  white-space: nowrap;
+  white-space: nowrap; /* mantiene il testo su una riga su schermi grandi */
   animation: textAppear 3s ease forwards;
   opacity: 0;
   overflow: hidden;
@@ -93,5 +93,13 @@ h1#main-text {
   }
   50% {
     filter: drop-shadow(0 0 15px var(--accent-color));
+  }
+}
+
+/* Responsive: disabilita nowrap e riduci font su schermi piccoli */
+@media (max-width: 600px) {
+  h1#main-text {
+    white-space: normal;
+    font-size: 1.6rem;
   }
 }
