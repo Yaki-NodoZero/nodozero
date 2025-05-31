@@ -13,10 +13,16 @@
   box-sizing: border-box;
 }
 
+/* =============================== */
+/* Stili generali per INDEX e FTTH */
+/* =============================== */
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-main);
+  /* Il default rimane un’altezza piena con flex centering:
+     - Lo “reset” per ftth.html verrà applicato tramite .ftth-page */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -139,6 +145,7 @@ h1#main-text {
     margin-bottom: 70px;
   }
 }
+
 .projects {
   margin: 40px auto;
   max-width: 600px;
@@ -175,6 +182,7 @@ h1#main-text {
   background-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.6);
 }
+
 /* Stili per la tendina dall'alto */
 .projects-toggle {
   margin: 20px auto;
@@ -247,4 +255,183 @@ h1#main-text {
   max-height: 200px;
   opacity: 1;
   margin-bottom: 20px;
+}
+
+
+/* ======================================================= */
+/* STILI SPECIFICI PER FTTH.HTML (override del body, ecc.)  */
+/* ======================================================= */
+
+.ftth-page {
+  /* RIMUOVIAMO height:100vh e limitiamo il flex solo all'asse orizzontale */
+  height: auto !important;
+  display: flex;               /* mantenuto per centrare orizzontalmente */
+  flex-direction: column;      
+  justify-content: flex-start; /* parte dall'alto, senza centering verticale */
+  align-items: center;         /* centrato orizzontalmente */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Disabilita tutte le animazioni ereditarie su container / hero / main per ftth.html */
+.ftth-page .container,
+.ftth-page .ftth-hero,
+.ftth-page .ftth-main {
+  animation: none !important;
+}
+
+/* Mantieni il testo a sinistra (eccetto la hero) */
+.ftth-page .container {
+  text-align: left;
+}
+
+/* 2) Disabilita tutte le animazioni ereditarie su container / hero / main per ftth.html */
+.ftth-page .container,
+.ftth-page .ftth-hero,
+.ftth-page .ftth-main {
+  animation: none !important;
+}
+
+/* 3) Hero Section */
+.ftth-hero {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;    /* Il titolo rimane centrato */
+  margin: 0 auto 40px;   /* margin-top 0, margin-bottom 40px, centrato orizzontalmente */
+  padding: 20px;
+}
+.ftth-hero h1 {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+.ftth-hero .ftth-subtitle {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+.ftth-hero .ftth-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.ftth-hero .ftth-btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #1e90ff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+.ftth-hero .ftth-btn:hover {
+  background-color: #3aa0ff;
+}
+
+/* 4) Layout del contenuto principale */
+.ftth-main {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 0 auto 40px;  /* centrato orizzontalmente con margin-bottom */
+}
+
+/* 5) Stile delle “card” */
+.ftth-card {
+  background-color: rgba(30, 30, 30, 0.95);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.ftth-card h2 {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+.ftth-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #dddddd;
+  margin-bottom: 0.75rem;
+}
+.ftth-card ul {
+  margin-left: 1rem;
+}
+.ftth-card ul li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+  color: #dddddd;
+}
+.ftth-card ul li strong {
+  color: var(--text-color);
+}
+
+/* 6) Contatti all’interno delle card */
+.ftth-contact {
+  text-align: center;
+}
+.ftth-contact h2 {
+  margin-bottom: 0.5rem;
+}
+.ftth-contact a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+.ftth-contact a:hover {
+  text-decoration: underline;
+}
+
+/* 7) Footer / Ritorno alla Home */
+.ftth-footer {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  margin: 0 auto 20px;
+}
+.ftth-footer .back-link {
+  color: var(--accent-color);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.ftth-footer .back-link:hover {
+  color: #00ffbb;
+}
+
+/* 8) Allinea tutti i testi a sinistra (tranne la hero) */
+.ftth-page .container {
+  text-align: left;
+}
+
+/* 9) Responsive per ftth.html */
+@media (max-width: 600px) {
+  .ftth-hero h1 {
+    font-size: 1.6rem;
+  }
+  .ftth-hero .ftth-subtitle {
+    font-size: 0.9rem;
+  }
+  .ftth-hero .ftth-btn {
+    font-size: 0.9rem;
+    padding: 0.65rem 1rem;
+  }
+  .ftth-card {
+    padding: 16px;
+  }
+  .ftth-card h2 {
+    font-size: 1.2rem;
+  }
+  .ftth-card p,
+  .ftth-card ul li {
+    font-size: 0.9rem;
+  }
 }
