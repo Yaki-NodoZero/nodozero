@@ -7,6 +7,23 @@
   <!-- collegamento al file CSS esistente -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- === Blocco per gestire correttamente lo zoom del browser === -->
+  <style>
+    html {
+      transform-origin: 0 0;
+      zoom: 1;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    /* Su schermi ad alta densità, ripristina lo zoom nativo */
+    @media screen and (min-resolution: 2dppx) {
+      html {
+        zoom: initial;
+      }
+    }
+  </style>
+
   <!-- regola per evitare che l'h1 finisca tagliato su schermi piccoli -->
   <style>
     @media (max-width: 600px) {
