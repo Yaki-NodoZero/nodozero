@@ -273,19 +273,19 @@ h1#main-text {
   padding-bottom: 20px;
 }
 
-/* Disabilita tutte le animazioni ereditarie su container / hero / main per ftth.html */
+/* Disabilitate tutte le animazioni ereditarie su container / hero / main per ftth.html */
 .ftth-page .container,
 .ftth-page .ftth-hero,
 .ftth-page .ftth-main {
   animation: none !important;
 }
 
-/* Mantieni il testo a sinistra (eccetto la hero) */
+/* Mantenuto il testo a sinistra (eccetto la hero) */
 .ftth-page .container {
   text-align: left;
 }
 
-/* 2) Disabilita tutte le animazioni ereditarie su container / hero / main per ftth.html */
+/* 2) Disabilitate tutte le animazioni ereditarie su container / hero / main per ftth.html */
 .ftth-page .container,
 .ftth-page .ftth-hero,
 .ftth-page .ftth-main {
@@ -407,7 +407,7 @@ h1#main-text {
   color: #00ffbb;
 }
 
-/* 8) Allinea tutti i testi a sinistra (tranne la hero) */
+/* 8) Allineati tutti i testi a sinistra (tranne la hero) */
 .ftth-page .container {
   text-align: left;
 }
