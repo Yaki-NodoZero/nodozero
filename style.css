@@ -1,437 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodoZero</title>
+  <!-- collegamento al file CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- === Blocco per gestire correttamente lo zoom del browser === -->
+  <style>
+    html {
+      transform-origin: 0 0;
+      zoom: 1;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    @media screen and (min-resolution: 2dppx) {
+      html {
+        zoom: initial;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-wrapper">
+      <img src="logo-nodozero.png" alt="Logo ufficiale di NodoZero" id="logo" />
+    </div>
 
-:root {
-  --bg-color: #0a0a0a;
-  --text-color: #00ff88;
-  --accent-color: #00ffaa;
-  --font-main: 'Space Grotesk', sans-serif;
-}
+    <h1 id="main-text" class="nowrap"></h1>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    <button id="projects-toggle" class="projects-toggle">Nodi attivati & in cantiere &#9660;</button>
 
-/* =============================== */
-/* Stili generali per INDEX e FTTH */
-/* =============================== */
+    <aside id="projects-panel" class="projects-panel">
+      <h2>Nodi attivati & in cantiere</h2>
+      <button id="projects-close" class="projects-close">✕</button>
+      <ul class="projects-list">
+        <li>
+          <strong>Casa del Kebab da Bozan 🥙</strong><br>
+          Menu digitale QR – design nero & oro, sezioni Contatti/Orari/Promozioni.
+        </li>
+        <li>
+          <strong>GameBunker.it 🕹️</strong> (in arrivo)<br>
+          Sito v1.0 in stile retro-gaming per il network di TCG, videogiochi e fumetti.
+        </li>
+      </ul>
+    </aside>
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-main);
-  /* Il default rimane un’altezza piena con flex centering:
-     - Lo “reset” per ftth.html verrà applicato tramite .ftth-page */
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 20px;
-  position: relative;
-}
+    <!-- Link a ftth.html -->
+    <p class="link-ftth">
+      <a href="ftth.html">Posso installare la fibra FTTH?</a>
+    </p>
+  </div>
 
-.container {
-  animation: fadeIn 2s ease-in-out;
-  max-width: 95vw;
-  word-break: break-word;
-  margin-bottom: 60px; /* Spazio per evitare sovrapposizione al footer */
-}
+  <footer class="contatti">
+    Contatti: <a href="mailto:info@nodozero.com">info@nodozero.com</a> |
+    <a href="https://www.instagram.com/nodozero" target="_blank" rel="noopener">Instagram</a>
+  </footer>
 
-.logo-wrapper {
-  margin-bottom: 30px;
-  animation: pulse 3s infinite;
-}
-
-#logo {
-  width: 180px;
-  max-width: 80vw;
-  filter: drop-shadow(0 0 8px var(--accent-color));
-}
-
-h1#main-text {
-  font-size: 2rem;
-  line-height: 1.4;
-  max-width: 100%;
-  white-space: normal;
-  animation: textAppear 3s ease forwards;
-  opacity: 0;
-  overflow-wrap: break-word;
-  overflow: visible;
-  padding: 0 10px;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-.motto {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  color: var(--accent-color);
-  opacity: 0.8;
-  padding: 0 10px;
-}
-
-/* footer contatti */
-.contatti {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-size: 0.9rem;
-  color: #888;
-  text-align: center;
-  background: rgba(10, 10, 10, 0.8);
-  padding: 5px 0;
-  box-sizing: border-box;
-  z-index: 10;
-}
-
-.contatti a {
-  color: var(--accent-color);
-  text-decoration: none;
-  margin: 0 8px;
-}
-
-.contatti a:hover {
-  text-decoration: underline;
-}
-
-/* Animazioni */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes textAppear {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 8px var(--accent-color));
-  }
-  50% {
-    filter: drop-shadow(0 0 15px var(--accent-color));
-  }
-}
-
-/* Responsive: orizzontale mobile */
-@media (orientation: landscape) and (max-width: 768px) {
-  h1#main-text {
-    font-size: 1.5rem;
-  }
-
-  .motto {
-    font-size: 1rem;
-  }
-
-  #logo {
-    width: 140px;
-  }
-
-  .contatti {
-    font-size: 0.8rem;
-    padding: 4px 0;
-  }
-
-  .container {
-    margin-bottom: 70px;
-  }
-}
-
-.projects {
-  margin: 40px auto;
-  max-width: 600px;
-  text-align: left;
-}
-.projects h2 {
-  font-size: 1.8rem;
-  color: var(--accent-color);
-  margin-bottom: 16px;
-}
-.projects ul {
-  list-style: none;
-  padding: 0;
-}
-.projects li {
-  margin-bottom: 12px;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* Badge semplice */
-.badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-}
-.badge.done {
-  background-color: rgba(0, 255, 136, 0.2);
-  color: var(--text-color);
-}
-.badge.soon {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* Stili per la tendina dall'alto */
-.projects-toggle {
-  margin: 20px auto;
-  display: block;
-  background: var(--accent-color);
-  border: none;
-  color: var(--bg-color);
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: transform 0.2s;
-}
-.projects-toggle.open {
-  transform: rotate(360deg);
-}
-.projects-panel {
-  position: fixed;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  max-height: 80vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-  padding: 20px;
-  overflow-y: auto;
-  transition: top 0.4s ease;
-  z-index: 100;
-}
-.projects-panel.open {
-  top: 0;
-}
-.projects-panel h2 {
-  font-size: 1.6rem;
-  color: var(--accent-color);
-  margin-bottom: 16px;
-}
-.projects-panel .projects-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: transparent;
-  border: none;
-  color: var(--accent-color);
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-.projects-panel ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 40px;
-}
-.projects-panel li {
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-/* Restrizione iniziale: nascondo i dettagli */
-.projects-panel .projects-list li {
-  max-height: 0;
-  opacity: 0;
-  margin-bottom: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
-}
-
-/* Quando il panel è aperto: mostro i dettagli */
-.projects-panel.open .projects-list li {
-  max-height: 200px;
-  opacity: 1;
-  margin-bottom: 20px;
-}
-
-
-/* ======================================================= */
-/* STILI SPECIFICI PER FTTH.HTML (override del body, ecc.)  */
-/* ======================================================= */
-
-.ftth-page {
-  /* RIMUOVIAMO height:100vh e limitiamo il flex solo all'asse orizzontale */
-  height: auto !important;
-  display: flex;               /* mantenuto per centrare orizzontalmente */
-  flex-direction: column;      
-  justify-content: flex-start; /* parte dall'alto, senza centering verticale */
-  align-items: center;         /* centrato orizzontalmente */
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-/* Disabilitate tutte le animazioni ereditarie su container / hero / main per ftth.html */
-.ftth-page .container,
-.ftth-page .ftth-hero,
-.ftth-page .ftth-main {
-  animation: none !important;
-}
-
-/* Mantenuto il testo a sinistra (eccetto la hero) */
-.ftth-page .container {
-  text-align: left;
-}
-
-/* 2) Disabilitate tutte le animazioni ereditarie su container / hero / main per ftth.html */
-.ftth-page .container,
-.ftth-page .ftth-hero,
-.ftth-page .ftth-main {
-  animation: none !important;
-}
-
-/* 3) Hero Section */
-.ftth-hero {
-  width: 100%;
-  max-width: 800px;
-  text-align: center;    /* Il titolo rimane centrato */
-  margin: 0 auto 40px;   /* margin-top 0, margin-bottom 40px, centrato orizzontalmente */
-  padding: 20px;
-}
-.ftth-hero h1 {
-  font-size: 2rem;
-  color: var(--accent-color);
-  margin-bottom: 0.5rem;
-}
-.ftth-hero .ftth-subtitle {
-  font-size: 1rem;
-  color: #cccccc;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
-}
-.ftth-hero .ftth-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-.ftth-hero .ftth-btn {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  background-color: #1e90ff;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.2s;
-}
-.ftth-hero .ftth-btn:hover {
-  background-color: #3aa0ff;
-}
-
-/* 4) Layout del contenuto principale */
-.ftth-main {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin: 0 auto 40px;  /* centrato orizzontalmente con margin-bottom */
-}
-
-/* 5) Stile delle “card” */
-.ftth-card {
-  background-color: rgba(30, 30, 30, 0.95);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-.ftth-card h2 {
-  font-size: 1.4rem;
-  color: var(--accent-color);
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 6px;
-}
-.ftth-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #dddddd;
-  margin-bottom: 0.75rem;
-}
-.ftth-card ul {
-  margin-left: 1rem;
-}
-.ftth-card ul li {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 0.6rem;
-  color: #dddddd;
-}
-.ftth-card ul li strong {
-  color: var(--text-color);
-}
-
-/* 6) Contatti all’interno delle card */
-.ftth-contact {
-  text-align: center;
-}
-.ftth-contact h2 {
-  margin-bottom: 0.5rem;
-}
-.ftth-contact a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-.ftth-contact a:hover {
-  text-decoration: underline;
-}
-
-/* 7) Footer / Ritorno alla Home */
-.ftth-footer {
-  width: 100%;
-  max-width: 800px;
-  text-align: left;
-  margin: 0 auto 20px;
-}
-.ftth-footer .back-link {
-  color: var(--accent-color);
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.ftth-footer .back-link:hover {
-  color: #00ffbb;
-}
-
-/* 8) Allineati tutti i testi a sinistra (tranne la hero) */
-.ftth-page .container {
-  text-align: left;
-}
-
-/* 9) Responsive per ftth.html */
-@media (max-width: 600px) {
-  .ftth-hero h1 {
-    font-size: 1.6rem;
-  }
-  .ftth-hero .ftth-subtitle {
-    font-size: 0.9rem;
-  }
-  .ftth-hero .ftth-btn {
-    font-size: 0.9rem;
-    padding: 0.65rem 1rem;
-  }
-  .ftth-card {
-    padding: 16px;
-  }
-  .ftth-card h2 {
-    font-size: 1.2rem;
-  }
-  .ftth-card p,
-  .ftth-card ul li {
-    font-size: 0.9rem;
-  }
-}
+  <!-- collegamento al file JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
