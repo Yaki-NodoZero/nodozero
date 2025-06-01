@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi siamo – NodoZero</title>
+  <!-- collegamento al file CSS esistente -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Aggiungo questa regola per evitare che l'h1 finisca tagliato su schermi piccoli -->
+  <style>
+    @media (max-width: 600px) {
+      /* Spazio extra sopra l’h1 su smartphone */
+      h1 {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Titolo pagina con spacing corretto su mobile -->
+    <h1>Chi siamo:</h1>
+
+    <!-- Sezione con bio, missione e disclaimer -->
+    <section class="ftth-card">
+      <p>
+        Un tecnico FTTH che ha unito la sua professione e la sua passione per la tecnologia e l'informatica.
+      </p>
+
+      <p>
+        La nostra missione è rendere il mondo informatico più semplice e accessibile a tutti. Vogliamo accompagnare chi non ha dimestichezza
+        con le logiche digitali, offrendo guide passo-passo, consigli concreti e risorse pratiche per avviare la propria digitalizzazione senza
+        complicazioni inutili. Che si tratti di installare fibra FTTH, scegliere il servizio migliore o capire come gestire il proprio router, 
+        mettiamo a disposizione le competenze sul campo per ridurre ansie e dubbi.
+      </p>
+
+      <p>
+        In questi primi giorni di vita di NodoZero abbiamo creato pagine facili da consultare per la verifica di copertura e una raccolta di suggerimenti tecnici dedicati a scavi, tubazioni e dispositivi di rete. 
+        Ogni contenuto nasce dall’esperienza sul campo, pensato per trasformare concetti complessi in informazioni fruibili da chiunque.
+      </p>
+
+      <p>
+        Tutti i contenuti presenti sul sito sono da intendersi a solo scopo informativo. Non affiliato con Open Fiber, FiberCop o altri operatori.
+      </p>
+    </section>
+  </div>
+
+  <!-- Footer / Ritorno alla Home -->
+  <footer class="ftth-footer">
+    <a href="index.html" class="back-link">← Torna alla home</a>
+  </footer>
+</body>
+</html>
