@@ -6,6 +6,21 @@
   <title>NodoZero</title>
   <!-- collegamento al file CSS -->
   <link rel="stylesheet" href="style.css" />
+  <!-- === Blocco per gestire correttamente lo zoom del browser === -->
+  <style>
+    html {
+      transform-origin: 0 0;
+      zoom: 1;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    @media screen and (min-resolution: 2dppx) {
+      html {
+        zoom: initial;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
