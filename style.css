@@ -1,29 +1,13 @@
-/* =================================================
-   Migliorie per lo zoom: mantieni il resto identico
-   ================================================= */
-html {
-  transform-origin: 0 0;
-  zoom: 1;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-@media screen and (min-resolution: 2dppx) {
-  html {
-    zoom: initial;
-  }
-}
-
-/* =============================== */
-/* Stili generali per INDEX e FTTH */
-/* =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
 
 :root {
-  --bg-color: #0a0a0a;
-  --text-color: #00ff88;
-  --accent-color: #00ffaa;
+  --bg-color: #111;
+  --text-color: #f0f0f0;
+  --accent-color: #00aaff;
+  --highlight-color: #00ff88;
+  --card-bg: #1c1c1c;
+  --footer-bg: #0d0d0d;
+  --btn-text: #000;
   --font-main: 'Space Grotesk', sans-serif;
 }
 
@@ -37,433 +21,221 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-main);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow-x: hidden;
-  overflow-y: auto;
+  line-height: 1.8;
   padding: 20px;
-  position: relative;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .container {
-  animation: fadeIn 2s ease-in-out;
-  max-width: 95vw;
-  word-break: break-word;
-  margin-bottom: 60px; /* Spazio per evitare sovrapposizione al footer */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.logo-wrapper {
-  margin-bottom: 30px;
-  animation: pulse 3s infinite;
+img#logo {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto 20px;
+  animation: glowPulse 3s ease-in-out infinite;
 }
 
-#logo {
-  width: 180px;
-  max-width: 80vw;
-  filter: drop-shadow(0 0 8px var(--accent-color));
-}
-
-h1#main-text {
-  font-size: 2rem;
-  line-height: 1.4;
-  max-width: 100%;
-  white-space: normal;
-  animation: textAppear 3s ease forwards;
-  opacity: 0;
-  overflow-wrap: break-word;
-  overflow: visible;
-  padding: 0 10px;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-.motto {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  color: var(--accent-color);
-  opacity: 0.8;
-  padding: 0 10px;
-}
-
-/* footer contatti */
-.contatti {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-size: 0.9rem;
-  color: #888;
-  text-align: center;
-  background: rgba(10, 10, 10, 0.8);
-  padding: 5px 0;
-  box-sizing: border-box;
-  z-index: 10;
-}
-
-.contatti a {
-  color: var(--accent-color);
-  text-decoration: none;
-  margin: 0 8px;
-}
-
-.contatti a:hover {
-  text-decoration: underline;
-}
-
-/* Animazioni */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes textAppear {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 8px var(--accent-color));
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 5px #00ff88);
   }
   50% {
-    filter: drop-shadow(0 0 15px var(--accent-color));
+    filter: drop-shadow(0 0 15px #00ff88);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #00ff88);
   }
 }
 
-/* Responsive: orizzontale mobile */
-@media (orientation: landscape) and (max-width: 768px) {
-  h1#main-text {
-    font-size: 1.5rem;
-  }
-
-  .motto {
-    font-size: 1rem;
-  }
-
-  #logo {
-    width: 140px;
-  }
-
-  .contatti {
-    font-size: 0.8rem;
-    padding: 4px 0;
-  }
-
-  .container {
-    margin-bottom: 70px;
-  }
-}
-
-.projects {
-  margin: 40px auto;
-  max-width: 600px;
-  text-align: left;
-}
-.projects h2 {
-  font-size: 1.8rem;
+h1 {
   color: var(--accent-color);
-  margin-bottom: 16px;
-}
-.projects ul {
-  list-style: none;
-  padding: 0;
-}
-.projects li {
-  margin-bottom: 12px;
-  font-size: 1rem;
-  line-height: 1.4;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
 }
 
-/* Badge semplice */
-.badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  margin-bottom: 6px;
+h2 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
 }
-.badge.done {
-  background-color: rgba(0, 255, 136, 0.2);
+
+p, li {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
   color: var(--text-color);
-}
-.badge.soon {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
+  max-width: 65ch;
+  margin-bottom: 10px;
+  line-height: 1.7;
 }
 
-/* Stili per la tendina dall'alto */
-.projects-toggle {
-  margin: 20px auto;
-  display: block;
-  background: var(--accent-color);
-  border: none;
-  color: var(--bg-color);
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: transform 0.2s;
-}
-.projects-toggle.open {
-  transform: rotate(360deg);
-}
-.projects-panel {
-  position: fixed;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  max-height: 80vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-  padding: 20px;
-  overflow-y: auto;
-  transition: top 0.4s ease;
-  z-index: 100;
-}
-.projects-panel.open {
-  top: 0;
-}
-.projects-panel h2 {
-  font-size: 1.6rem;
-  color: var(--accent-color);
-  margin-bottom: 16px;
-}
-.projects-panel .projects-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: transparent;
-  border: none;
-  color: var(--accent-color);
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-.projects-panel ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 40px;
-}
-.projects-panel li {
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-.projects-panel .projects-list li {
-  max-height: 0;
-  opacity: 0;
-  margin-bottom: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
-}
-.projects-panel.open .projects-list li {
-  max-height: 200px;
-  opacity: 1;
+ul {
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 
-/* ======================================================= */
-/* STILI SPECIFICI PER FTTH.HTML (override del body, ecc.)  */
-/* ======================================================= */
-.ftth-page {
-  height: auto !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.ftth-page .container,
-.ftth-page .ftth-hero,
-.ftth-page .ftth-main {
-  animation: none !important;
-}
-.ftth-page .container {
-  text-align: left;
-}
-.ftth-hero {
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-  margin: 0 auto 40px;
-  padding: 20px;
-}
-.ftth-hero h1 {
-  font-size: 2rem;
-  color: var(--accent-color);
-  margin-bottom: 0.5rem;
-}
-.ftth-hero .ftth-subtitle {
-  font-size: 1rem;
-  color: #cccccc;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
-}
-.ftth-hero .ftth-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-.ftth-hero .ftth-btn {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  background-color: #1e90ff;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.2s;
-}
-.ftth-hero .ftth-btn:hover {
-  background-color: #3aa0ff;
-}
-.ftth-main {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin: 0 auto 40px;
-}
-.ftth-card {
-  background-color: rgba(30, 30, 30, 0.95);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-.ftth-card h2 {
-  font-size: 1.4rem;
-  color: var(--accent-color);
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 6px;
-}
-.ftth-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #dddddd;
-  margin-bottom: 0.75rem;
-}
-.ftth-card ul {
-  margin-left: 1rem;
-}
-.ftth-card ul li {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 0.6rem;
-  color: #dddddd;
-}
-.ftth-card ul li strong {
-  color: var(--text-color);
-}
-.ftth-contact {
-  text-align: center;
-}
-.ftth-contact h2 {
-  margin-bottom: 0.5rem;
-}
-.ftth-contact a {
-  color: var(--accent-color);
+a {
+  color: var(--highlight-color);
   text-decoration: none;
 }
-.ftth-contact a:hover {
+
+a:hover {
   text-decoration: underline;
 }
-.ftth-footer {
+
+.ftth-btn, .menu-btn, .project-btn {
+  background-color: var(--accent-color);
+  color: var(--btn-text);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.3);
+}
+
+.ftth-btn:hover,
+.menu-btn:hover,
+.project-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+}
+
+section {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+footer p {
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--highlight-color);
+}
+
+.subtitle,
+.ftth-subtitle {
+  display: block;
+  text-align: center;
   width: 100%;
-  max-width: 800px;
-  text-align: left;
-  margin: 0 auto 20px;
+  margin: 10px auto 20px auto;
+  max-width: unset;
+  color: var(--text-color);
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
 }
-.ftth-footer .back-link {
-  color: var(--accent-color);
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color 0.2s;
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
-.ftth-footer .back-link:hover {
-  color: #00ffbb;
+
+.hero {
+  text-align: center;
 }
-.ftth-page .container {
-  text-align: left;
+
+.ftth-cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
 }
-@media (max-width: 600px) {
-  .ftth-hero h1 {
-    font-size: 1.6rem;
+
+.project-btn[disabled] {
+  background: none;
+  color: var(--text-color);
+  font-weight: normal;
+  cursor: default;
+  pointer-events: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.about-page .ftth-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =============================== */
+/* MEDIA QUERY INTERMEDIA (tablet/laptop) */
+/* =============================== */
+@media (max-width: 960px) {
+  .container {
+    padding: 15px;
   }
-  .ftth-hero .ftth-subtitle {
-    font-size: 0.9rem;
+
+  img#logo {
+    max-width: 160px;
   }
-  .ftth-hero .ftth-btn {
-    font-size: 0.9rem;
-    padding: 0.65rem 1rem;
-  }
-  .ftth-card {
-    padding: 16px;
-  }
-  .ftth-card h2 {
-    font-size: 1.2rem;
-  }
-  .ftth-card p,
-  .ftth-card ul li {
-    font-size: 0.9rem;
+
+  .ftth-btn,
+  .menu-btn,
+  .project-btn {
+    font-size: 1rem;
+    padding: 10px 16px;
   }
 }
 
-/* PATCH RESPONSIVE MOBILE: risolve sovrapposizione testo-footer */
+/* =============================== */
+/* MEDIA QUERY MOBILE */
+/* =============================== */
 @media (max-width: 600px) {
   body {
-    justify-content: flex-start !important;
-    padding-bottom: 100px !important;
-    height: auto !important;
-    min-height: 100vh;
+    padding: 10px;
   }
+
   .container {
-    margin-bottom: 90px !important;
+    padding: 10px;
   }
-  h1#main-text {
-    font-size: 1.3rem !important;
-    padding-bottom: 32px !important;
-    margin-bottom: 10px !important;
-    line-height: 1.2 !important;
-    word-break: break-word;
-    min-height: 80px !important;
+
+  img#logo {
+    max-width: 140px;
   }
-  .logo-wrapper {
-    margin-bottom: 18px !important;
+
+  .ftth-btn,
+  .menu-btn,
+  .project-btn {
+    width: 100%;
+    text-align: center;
   }
-  #logo {
-    width: 110px !important;
-    max-width: 75vw;
-  }
-  .projects-toggle {
-    font-size: 0.95rem !important;
-    padding: 8px 14px !important;
-  }
-  .contatti {
-    font-size: 0.92rem !important;
-    padding: 7px 0 !important;
-  }
-  .link-ftth {
-    font-size: 1.02em;
-    margin-bottom: 10px;
+
+  p, li {
+    font-weight: 500;
   }
 }
-@media (max-width: 450px) {
-  .container {
-    margin-bottom: 120px !important;
-  }
-  h1#main-text {
-    font-size: 1.1rem !important;
-    min-height: 70px !important;
-  }
+
+
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
