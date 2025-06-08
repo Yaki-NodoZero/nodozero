@@ -4,61 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NodoZero</title>
-  <!-- collegamento al file CSS -->
   <link rel="stylesheet" href="style.css" />
-  <!-- === Blocco per gestire correttamente lo zoom del browser === -->
-  <style>
-    html {
-      transform-origin: 0 0;
-      zoom: 1;
-    }
-    body {
-      overflow-x: hidden;
-    }
-    @media screen and (min-resolution: 2dppx) {
-      html {
-        zoom: initial;
-      }
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <div class="container">
-    <div class="logo-wrapper">
-      <img src="logo-nodozero.png" alt="Logo ufficiale di NodoZero" id="logo" />
-    </div>
+    <header class="hero">
+      <div class="logo-wrapper">
+        <img src="logo-nodozero.png" alt="Logo ufficiale di NodoZero" id="logo" />
+      </div>
+      <p class="subtitle">Il primo nodo. L'unico che conta.</p>
+    </header>
 
-    <h1 id="main-text" class="nowrap"></h1>
+    <main>
+      <section class="ftth-card">
+        <h2>Fibra FTTH e come averla</h2>
+        <p>Tutte le informazioni utili per capire come funziona la vera fibra ottica fino a casa (FTTH), con link diretti per verificare la copertura e consigli tecnici sull'installazione.</p>
+        <a href="ftth.html" class="ftth-btn">Vai alla pagina FTTH</a>
+      </section>
 
-    <button id="projects-toggle" class="projects-toggle">Nodi attivati & in cantiere &#9660;</button>
+      <section class="menu-card">
+        <h2>Menù digitali & QR Code</h2>
+        <p>Scopri i menù digitali creati da NodoZero per ristoranti e locali. Moderni, chiari, pronti per QR Code.</p>
+        <a href="menu.html" class="menu-btn">Scopri i menù</a>
+      </section>
 
-    <aside id="projects-panel" class="projects-panel">
-      <h2>Nodi attivati & in cantiere</h2>
-      <button id="projects-close" class="projects-close">✕</button>
-      <ul class="projects-list">
-        <li>
-          <strong>Casa del Kebab da Bozan 🥙</strong><br>
-          Menu digitale QR – design nero & oro, sezioni Contatti/Orari/Promozioni.
-        </li>
-        <li>
-          <strong>GameBunker.it 🕹️</strong> (in arrivo)<br>
-          Sito v1.0 in stile retro-gaming per il network di TCG, videogiochi e fumetti.
-        </li>
-      </ul>
-    </aside>
+      <section class="project-card">
+        <h2>Altri progetti</h2>
+        <p>Altri progetti firmati NodoZero. Dai menù digitali ai siti web, qui trovi i “nodi attivi” fuori dalla fibra FTTH.</p>
+        <a href="progetti.html" class="project-btn">Esplora i progetti</a>
+      </section>
 
-    <!-- Link a ftth.html -->
-    <p class="link-ftth">
-      <a href="ftth.html">Posso installare la fibra FTTH?</a>
-    </p>
+      <section class="ftth-card">
+        <h2>Chi siamo</h2>
+        <p><a href="chi-siamo.html" class="back-link">Scopri chi siamo</a></p>
+      </section>
+    </main>
+
+    
+    <footer>
+      <p>© NodoZero. Tutti i diritti riservati.</p>
+      <p>
+        <a href="https://wa.me/390131367533" target="_blank" style="color: #00ffaa; text-decoration: none;">
+          📞 WhatsApp
+        </a>
+        &nbsp;|&nbsp;
+        <a href="https://www.instagram.com/nodozero/#" target="_blank" style="color: #00ffaa; text-decoration: none;">
+          📷 Instagram
+        </a>
+      </p>
+    </footer>
+
   </div>
-
-  <footer class="contatti">
-    Contatti: <a href="mailto:info@nodozero.com">info@nodozero.com</a> |
-    <a href="https://www.instagram.com/nodozero" target="_blank" rel="noopener">Instagram</a>
-  </footer>
-
-  <!-- collegamento al file JavaScript -->
-  <script src="script.js"></script>
 </body>
 </html>
