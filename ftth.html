@@ -5,112 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NodoZero e l’FTTH: copertura e installazione</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- === Blocco per gestire correttamente lo zoom del browser === -->
-  <style>
-    html {
-      transform-origin: 0 0;
-      zoom: 1;
-    }
-    body {
-      overflow-x: hidden;
-    }
-    /* Su schermi ad alta densità, ripristina lo zoom nativo */
-    @media screen and (min-resolution: 2dppx) {
-      html {
-        zoom: initial;
-      }
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body class="ftth-page">
-  <div class="container ftth-container">
+  <div class="container">
     <!-- Hero Section -->
-    <header class="ftth-hero">
+    <header class="hero">
+      <div class="logo-wrapper">
+        <img src="logo-nodozero.png" alt="Logo NodoZero" id="logo" />
+      </div>
       <h1>NodoZero e l’FTTH</h1>
       <p class="ftth-subtitle">Verifica subito la copertura e scopri come funziona l'installazione.</p>
       <div class="ftth-cta">
-        <a href="https://openfiber.it/verifica-copertura/" target="_blank" class="ftth-btn">Verifica copertura OpenFiber</a>
-        <a href="https://www.fibercop.it/chi-siamo/verifica-la-tua-copertura/" target="_blank" class="ftth-btn">Verifica copertura FiberCop</a>
+        <a href="https://openfiber.it/verifica-copertura/" target="_blank" class="ftth-btn">Copertura OpenFiber</a>
+        <a href="https://www.fibercop.it/chi-siamo/verifica-la-tua-copertura/" target="_blank" class="ftth-btn">Copertura FiberCop</a>
       </div>
     </header>
 
     <!-- Contenuto Principale -->
-    <main class="ftth-main">
-      <!-- Box: Paragrafo introduttivo originale -->
+    <main>
       <section class="ftth-card">
         <p>Qui puoi verificare se sei coperto dalla vera <strong>fibra FTTH</strong> e capire in anticipo come avverrà l’installazione.</p>
       </section>
 
-      <!-- Box: Installazione OpenFiber -->
       <section class="ftth-card">
-        <h2>Installazione: due scenari (OpenFiber)</h2>
-        <p>Per gli utenti con copertura OpenFiber, il tipo di intervento dipende dal tipo di zona:</p>
+        <h2>Cos’è la fibra ottica e perché è importante?</h2>
+        <p>
+          La <strong>fibra ottica</strong> trasmette dati con impulsi di luce. A differenza del vecchio doppino in rame, la fibra non perde qualità con la distanza.
+        </p>
+        <p>Con la vera <strong>FTTH</strong>, la fibra arriva direttamente dentro casa tua, garantendo una connessione:</p>
         <ul>
-          <li>
-            <strong>Cluster A&amp;B</strong> 🏙️: aree urbane, spesso condomini già predisposti con montanti e tubazioni interne.<br>
-            In alcuni casi (soprattutto con meno di 4 UI), fino al confine della proprietà sono stati predisposti da OpenFiber gli scavi.
-          </li>
-          <li>
-            <strong>Cluster C&amp;D</strong> 🏡: aree a bassa densità (<strong>zone bianche</strong>), spesso case singole o isolate.<br>
-            In alcuni casi, i PTE, ROE o PTA sono già presenti, ma non sempre sfruttabili senza ulteriori lavorazioni (scavi, canaline, fori passanti, ecc.).
-          </li>
+          <li><strong>Stabile</strong>: meno disconnessioni, ping più basso</li>
+          <li><strong>Veloce</strong>: fino a 1 Gbps reali (e oltre)</li>
+          <li><strong>Futura</strong>: streaming 4K, smart working, gaming e domotica</li>
+          <li><strong>Resistente</strong>: niente interferenze elettriche</li>
         </ul>
       </section>
 
-      <!-- Box: Installazione FiberCop -->
+      <section class="ftth-card">
+        <h2>Installazione: due scenari (OpenFiber)</h2>
+        <ul>
+          <li><strong>Cluster A&B</strong> 🌇️: aree urbane, condomini già predisposti</li>
+          <li><strong>Cluster C&D</strong> 🏡: zone bianche, case singole, possibili lavorazioni extra</li>
+        </ul>
+      </section>
+
       <section class="ftth-card">
         <h2>Installazione: FiberCop</h2>
-        <p>
-          Con FiberCop, nella maggior parte dei casi si utilizza il <strong>percorso del vecchio doppino in rame</strong> già presente,
-          rendendo l’installazione più diretta. Le lavorazioni extra sono meno frequenti, ma dipendono dalla situazione dell’impianto interno.
-        </p>
+        <p>Usa spesso il percorso del vecchio doppino. Le lavorazioni extra sono meno frequenti ma dipendono dall’impianto interno.</p>
       </section>
 
-      <!-- Box: Dentro la proprietà -->
       <section class="ftth-card">
         <h2>Dentro la proprietà</h2>
-        <p>
-          Il tecnico FTTH è responsabile fino al confine della proprietà. Se è presente un punto di accesso utilizzabile, si sfrutta quello.<br>
-          Qualsiasi lavorazione extra (canaline esterne, attraversamenti, tubazioni da predisporre, ecc.) è a carico del cliente.
-        </p>
-        <p>
-          Se il cliente accetta di predisporre ciò che serve, l’appuntamento viene rimandato. In alcuni casi è necessaria la presenza
-          di due tecnici o di un cestello per lavorare in sicurezza.
-        </p>
+        <p>Il tecnico è responsabile fino al confine della proprietà. Lavorazioni extra sono a carico del cliente.</p>
+        <p>Se il cliente accetta di predisporre quanto necessario, l’appuntamento viene rimandato.</p>
       </section>
 
-      <!-- Box: Fuori dalla proprietà -->
       <section class="ftth-card">
         <h2>Fuori dalla proprietà</h2>
-        <p>
-          Se serve un nuovo collegamento esterno (es. scavi, attraversamenti aerei), se ne occupa OpenFiber dopo sopralluogo e autorizzazioni
-          (Enel, Telecom, Comune, ecc.).
-        </p>
+        <p>OpenFiber si occupa di nuovi collegamenti esterni previa autorizzazioni.</p>
       </section>
 
-      <!-- Box: Legenda tecnica -->
       <section class="ftth-card">
         <h2>Legenda tecnica</h2>
         <ul>
-          <li><strong>UI</strong>: Unità Immobiliare (appartamento, casa, negozio...)</li>
-          <li><strong>PTE</strong> o <strong>ROE</strong>: Punto Terminale di Edificio o Ripartitore Ottico di Edificio, solitamente nella parte comune delle cantine in prossimità dei contatori della luce.</li>
-          <li><strong>PTA</strong>: Punto di Terminazione Arretrato, punto di consegna della fibra ottica <strong>posto esternamente</strong> e <strong>in posizione arretrata</strong> rispetto al tradizionale punto d’ingresso interno nell’edificio.</li>
+          <li><strong>UI</strong>: Unità Immobiliare</li>
+          <li><strong>PTE / ROE</strong>: Punto Terminale / Ripartitore Ottico di Edificio</li>
+          <li><strong>PTA</strong>: Punto di Terminazione Arretrato, fuori dall’edificio</li>
         </ul>
       </section>
 
-      <!-- Box: Contatti -->
-      <section class="ftth-card ftth-contact">
+      <section class="ftth-card">
         <h2>Domande o chiarimenti?</h2>
-        <p>Hai bisogno di qualche info? Scrivici a <a href="mailto:info@nodozero.com">info@nodozero.com</a></p>
+        <p>Scrivici a <a href="mailto:info@nodozero.com">info@nodozero.com</a></p>
       </section>
     </main>
 
-    <!-- Footer / Ritorno alla Home + Link “Chi siamo” -->
-   <footer class="ftth-footer">
+    <footer>
       <a href="index.html" class="back-link">← Torna alla home</a>
-      <a href="chi-siamo.html" class="back-link" style="float: right;">
-        Chi siamo &rarr;
-      </a>
     </footer>
+  </div>
 </body>
 </html>
