@@ -239,3 +239,60 @@ html, body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+/* AGGIUNTA PER HARDWARE.HTML */
+
+.hardware-page .product-list {
+  text-align: center;
+}
+
+.hardware-page .product-item {
+  background-color: #2a2a2a; 
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 5px solid var(--highlight-color); 
+}
+
+.hardware-page .product-item h3 {
+  color: var(--highlight-color);
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  margin-bottom: 5px;
+}
+
+.hardware-page .product-item p {
+  text-align: center;
+  margin: 5px auto 15px auto;
+  max-width: 90%;
+  font-size: 1rem;
+}
+
+.hardware-page .buy-btn {
+    background-color: var(--highlight-color); 
+    color: var(--btn-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hardware-page .buy-btn:hover {
+    background-color: var(--highlight-color);
+    filter: brightness(1.1);
+}
+
+.disclaimer-aff {
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.7;
+  margin-top: 30px;
+}
+
+/* Modifica pulsante Affiliato */
+.monetized-card .ftth-btn {
+  background-color: var(--highlight-color) !important;
+  color: var(--btn-text) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5) !important;
+}
+
+.monetized-card .ftth-btn:hover {
+  filter: brightness(1.1);
+}
