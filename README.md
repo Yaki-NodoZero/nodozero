@@ -8,7 +8,7 @@ Questo pacchetto contiene i seguenti file principali:
 
 - `index.html` — Homepage del progetto NodoZero
 - `ftth.html` — Guida tecnica alla fibra FTTH e alle modalità di installazione
-- `menu.html` — Presentazione dei menù digitali creati da NodoZero
+- `hardware.html` — Consigli su come sfruttare al 100% la fibra FTTH
 - `progetti.html` — Showcase di altri progetti digitali (GameBunker, ecc.)
 - `chi-siamo.html` — Descrizione del team e della missione NodoZero
 - `style.css` — Stile unico, cyber-tech, responsive e accessibile
@@ -27,12 +27,6 @@ Questo pacchetto contiene i seguenti file principali:
 - Design responsive e accessibile
 - Hosting: [GitHub Pages](https://pages.github.com)
 
-## 📸 Esempi concreti
-
-- [Menù Casa del Kebap da Bozan](https://yaki-nodozero.github.io/menu-casa-kebap/)
-- Sito dimostrativo per fumetterie (in sviluppo)
-- Landing personalizzate, pagine sospese dinamiche, loghi animati
-
 ## ⚠️ Disclaimer
 
 NodoZero è un’iniziativa indipendente e **non affiliata a OpenFiber, FiberCop o altri operatori**. Le informazioni presenti sono frutto di esperienza diretta e sono da intendersi a solo scopo informativo.
@@ -41,7 +35,7 @@ NodoZero è un’iniziativa indipendente e **non affiliata a OpenFiber, FiberCop
 
 Per collaborazioni, richieste o suggerimenti:
 
-📧 **info@nodozero.com**  
+📧 **info@nodozero.com**
 📱 [Instagram](https://www.instagram.com/nodozero/)  
 💬 [WhatsApp](https://wa.me/390131367533)
 
